@@ -1,6 +1,7 @@
 @media screen and (max-width: 768px) {
     body {
         margin:0;
+        
     }
     header h1 {
         width:auto;
@@ -12,8 +13,13 @@
         opacity: 90%;
     }
 
+    #closeCross {
+        padding-left:60px;
+    }
+
     header nav ul {
         list-style: none;
+        padding-left:60px;
     }
 
     header nav ul li {
@@ -24,6 +30,15 @@
         text-decoration: none;
         color: #3C3C3C;
     }
+
+    #logoReseaux {
+        padding-left:60px;
+    }
+
+    #bgImage{
+        background-image: url(../../img/);
+    }
+
 } 
 
 @media screen and (max-width: 1024px) {
