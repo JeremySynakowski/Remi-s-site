@@ -8,13 +8,54 @@
         text-align: center;
     }
 
+    #pictureHeader {
+        height: 100vh;
+        width: 100%;
+        background-image: url(../../img/home.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #pIconMenu {
+        position: absolute;
+        top: 60px;
+        left: 60px;
+    }
+
+    #mainLogo {
+        position:absolute;
+        top:35%;     
+        width: 100%;
+        text-align: center;;   
+    }
+
+    #mainLogo img {
+        width:215px;
+    }
+
     header nav {
+        
         background-color: #FFF;
         opacity: 90%;
+        position: absolute;
+        top: 0;
+        width:80%;
+        left: -1000px;
+        height:100vh;
     }
 
     #closeCross {
         padding-left:60px;
+        padding-top:60px;
+    }
+
+    #plogo {
+        text-align: center;
+    }
+    p #logo {
+        width:100px;
+        
     }
 
     header nav ul {
@@ -35,9 +76,18 @@
         padding-left:60px;
     }
 
-    #bgImage{
-        background-image: url(../../img/);
+    #logoReseaux img:first-child {
+        padding-right:30px;
     }
+
+    #scrollButton {
+        position: absolute;
+        top:90%;
+        width:100%;
+        text-align: center;
+    }
+
+   
 
 } 
 
