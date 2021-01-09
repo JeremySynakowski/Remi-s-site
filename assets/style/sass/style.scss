@@ -1,0 +1,658 @@
+@font-face {
+  font-family: "ClanOT-NarrowBook";
+  src: url("../../fonts/ClanOT-NarrowBook.woff2") format("woff2"),
+    url("../../fonts/ClanOT-NarrowBook.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ClanOT-NarrowThin";
+  src: url("../../fonts/ClanOT-NarrowThin.woff2") format("woff2"),
+    url("../../assets/fonts/ClanOT-NarrowThin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ClanOT-NarrowBold";
+  src: url("../../fonts/ClanOT-NarrowBold.woff2") format("woff2"),
+    url("../../fonts/ClanOT-NarrowBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ClanOT-NarrowUltra";
+  src: url("../../fonts/ClanOT-NarrowUltra.woff2") format("woff2"),
+    url("../../fonts/ClanOT-NarrowUltra.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ClanOT-NarrowBlack";
+  src: url("../../fonts/ClanOT-NarrowBlack.woff2") format("woff2"),
+    url("../../fonts/ClanOT-NarrowBlack.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ClanOT-NarrowMedium";
+  src: url("../../fonts/ClanOT-NarrowMedium.woff2") format("woff2"),
+    url("../../fonts/ClanOT-NarrowMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ClanOT-NarrowNews";
+  src: url("../../fonts/ClanOT-NarrowNews.woff2") format("woff2"),
+    url("../../fonts/ClanOT-NarrowNews.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  h1 {
+    font-family: "ClanOT-NarrowNews";
+    font-size: 125px;
+    color: rgba(0, 0, 0, 0.04);
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 55px;
+    letter-spacing: 15px;
+  }
+
+  h2 {
+    font-family: "ClanOT-NarrowThin";
+    text-align: center;
+    padding-bottom: 25px;
+    text-align: center;
+    position: absolute;
+    top: 68px;
+    left: 40%;
+    font-size: 45px;
+    border-bottom: 2px solid black;
+  }
+
+  header {
+    width: 100%;
+
+    #pictureHeader {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      img#headerPic {
+        opacity: 0;
+        width: 100%;
+        margin: 0 auto;
+      }
+      img#scrollPicto {
+        margin-top: 1000px;
+        position: absolute;
+        z-index: 1000;
+        color: #fff;
+        bottom: 10%;
+        left: 50%;
+        animation: bounce 0.7s ease infinite;
+        filter: brightness(0);
+        cursor: pointer;
+      }
+
+      @keyframes bounce {
+        from {
+          top: 90%;
+        }
+        50% {
+          top: 87%;
+        }
+        to {
+          top: 90%;
+        }
+      }
+
+      div#content {
+        margin-top: -1000px;
+        opacity: 0;
+        width: 50%;
+        position: absolute;
+        top: 40%;
+        left: 23%;
+        background-color: rgba(0, 0, 0, 0.8);
+        border: 2px solid #fff;
+        text-align: center;
+        padding: 10px;
+        p {
+          font-size: 45px;
+          color: #fff;
+          font-family: "ClanOT-NarrowNews";
+        }
+        p:last-of-type {
+          font-size: 30px;
+        }
+      }
+    }
+
+    nav {
+      background-color: #262b37;
+      padding: 25px 15px;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+      transition: 1s all ease-in-out;
+      ul {
+        margin: auto;
+        justify-content: space-evenly;
+        list-style-type: none;
+        display: flex;
+        padding-left: 0;
+
+        a {
+          text-decoration: none;
+          li.waypoints {
+            font-family: "ClanOT-NarrowNews";
+            font-size: 16px;
+            color: grey;
+            .fas {
+              margin-right: 10px;
+            }
+            &:hover {
+              color: #fff;
+            }
+          }
+          .waypointActive {
+            color: #fff !important;
+          }
+        }
+      }
+    }
+    .sticky {
+      position: fixed;
+      transition: 1s all ease-in-out;
+      z-index: 100;
+      width: 100%;
+      top: 0;
+    }
+  }
+
+  section#easter-egg {
+    display: none;
+  }
+
+  section.showGame {
+    display: block !important;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    #closingCross {
+      position: absolute;
+      z-index: 100000;
+      top: 2%;
+      right: 2%;
+      width: 3%;
+      filter: invert(1);
+      cursor: pointer;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 40px;
+      margin-top: 90px;
+    }
+
+    p {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "ClanOT-NarrowNews";
+      font-size: 18px;
+      color: grey;
+      line-height: 35px;
+      letter-spacing: 2px;
+      margin-top: -45px;
+      img#js {
+        width: 5%;
+      }
+    }
+    #game {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    #game table {
+      background-color: rgba(0, 0, 0, 0);
+      border-radius: 30px;
+    }
+    #game td {
+      width: 2cm;
+      height: 2cm;
+      margin: 0px;
+      padding: 0px;
+      border: 2px rgba(0, 0, 0) inset;
+      border-radius: 2cm;
+      background-color: lightgrey;
+      cursor: pointer;
+    }
+    #game td.player1 {
+      background-color: red;
+    }
+    #game td.player2 {
+      background-color: yellow;
+    }
+  }
+
+  main {
+    position: relative;
+    background-color: #f5f5f5;
+
+    section#description {
+      position: relative;
+      width: 100%;
+      padding: 45px;
+      background-color: #f5f5f5;
+
+      div.sectionContainer {
+        width: 90%;
+        margin: auto;
+
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+
+        div#concerningMe {
+          width: 100%;
+          padding: 25px;
+
+          p {
+            width: 90%;
+            margin: auto;
+            text-align: center;
+            font-family: "ClanOT-NarrowNews";
+            font-size: 18px;
+            color: grey;
+            line-height: 35px;
+            letter-spacing: 2px;
+          }
+        }
+      }
+    }
+
+    section#comp {
+      position: relative;
+      width: 100%;
+      padding: 45px;
+      background-color: #fff;
+
+      div#skillBars {
+        width: 70%;
+        margin: auto;
+        margin-top: -60px;
+
+        div.skillBar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          p {
+            font-family: "ClanOT-NarrowNews";
+            font-size: 18px;
+            color: grey;
+            line-height: 35px;
+            letter-spacing: 2px;
+          }
+
+          p:first-of-type {
+            width: 20%;
+            text-indent: 15px;
+            background-color: lightgrey;
+            color: #fff;
+            border: 1px solid black;
+          }
+          div {
+            width: 80%;
+            height: 37px;
+            border: 1px solid black;
+            border-left: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            p.skillrating {
+              margin: 0;
+              border: none;
+              background-color: lightgrey;
+              color: transparent;
+            }
+
+            p#htmlSkill {
+              width: 90%;
+            }
+
+            p#CssSkill {
+              width: 90%;
+            }
+            p#responsiveSkill {
+              width: 80%;
+            }
+            p#jsSkill {
+              width: 70%;
+            }
+
+            p#jQuerySkill {
+              width: 60%;
+            }
+
+            p#ReactSkill {
+              width: 50%;
+            }
+            p#SassSkill {
+              width: 70%;
+            }
+
+            p#gitSkill {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    section#projects {
+      position: relative;
+      width: 100%;
+      padding: 45px;
+      background-color: #f5f5f5;
+
+      h2#h2project {
+        left: 46%;
+      }
+
+      div#projectsContainer {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        div.projectsView {
+          position: relative;
+          width: 49%;
+          border: 2px solid black;
+          margin-bottom: 30px;
+
+          div.overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+
+            div.overlayContent {
+              display: none;
+              padding: 15px;
+              h1 {
+                color: #fff;
+                font-size: 20px;
+                width: 100%;
+                text-align: center;
+              }
+
+              p {
+                color: #fff;
+                font-family: "ClanOT-NarrowNews";
+                text-align: center;
+                line-height: 25px;
+                span#user {
+                  a {
+                    font-style: italic;
+                    text-decoration: none;
+                    color: lightgrey;
+                    &:hover {
+                      color: red;
+                    }
+                  }
+                }
+              }
+
+              .techno {
+                text-align: center;
+                color: #fff;
+                font-family: "ClanOT-NarrowNews";
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 69px;
+                img {
+                  width: 33%;
+                  filter: contrast(1%);
+                }
+              }
+
+              div.logos {
+                width: 90%;
+                margin: auto;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                transition: 1s all ease-in-out;
+                div.logo {
+                  width: 10%;
+
+                  img {
+                    width: 100%;
+                  }
+                }
+              }
+              .animation {
+                width: 0% !important;
+              }
+
+              a.toWebSite {
+                display: flex;
+                width: 20%;
+                margin-top: 3%;
+                justify-content: center;
+                color: #000;
+                transition: 0.5s all ease-in-out;
+                width: 20%;
+                margin: 35px auto auto;
+                border: 1px solid transparent;
+                padding: 5px;
+                background-color: lightgrey;
+                font-family: "ClanOT-NarrowNews";
+                border-radius: 10px;
+
+                text-decoration: none;
+                color: #000;
+                height: 100%;
+                padding: 10px 23px;
+
+                &:hover {
+                  background-color: red;
+                  color: #fff;
+                  border: 1px solid #000;
+                }
+              }
+            }
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    section#contact {
+      position: relative;
+      min-height: 850px;
+      width: 100%;
+      padding: 45px;
+      background-color: #fff;
+      h2 {
+        left: 45%;
+      }
+
+      h3 {
+        position: absolute;
+
+        top: 25%;
+        left: 62%;
+      }
+
+      .formError {
+        position: absolute;
+        bottom: 10%;
+        left: 15%;
+      }
+
+      div#contactContainer {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+
+        div#myContact {
+          p {
+            font-family: "ClanOT-NarrowNews";
+            font-size: 15px;
+            color: grey;
+            line-height: 35px;
+            letter-spacing: 2px;
+
+            img {
+              width: 7%;
+              cursor: pointer;
+            }
+          }
+        }
+
+        form {
+          position: relative;
+          p {
+            position: relative;
+
+            .fas {
+              display: block;
+              width: 64px;
+              position: absolute;
+              top: 0;
+              left: -4px;
+              color: lightgrey;
+              font-size: 32px;
+              line-height: 38px;
+              text-align: center;
+              font-weight: 300;
+            }
+            input[type="text"] {
+              width: 97%;
+              height: 40px;
+              border-radius: 10px;
+              text-indent: 50px;
+              font-family: "ClanOT-NarrowMedium";
+              font-size: 15px;
+              color: grey;
+              outline: none;
+              letter-spacing: 2px;
+
+              &::placeholder {
+                text-indent: 50px;
+                font-family: "ClanOT-NarrowMedium";
+                font-size: 15px;
+                color: grey;
+                letter-spacing: 2px;
+              }
+            }
+          }
+
+          p#spanTextarea {
+            position: absolute;
+            right: 1%;
+          }
+
+          p#textareaContainer {
+            position: relative;
+
+            .far {
+              display: block;
+              width: 64px;
+              position: absolute;
+              top: 0;
+              left: -4px;
+              color: lightgrey;
+              font-size: 32px;
+              line-height: 38px;
+              text-align: center;
+              font-weight: 300;
+            }
+            textarea {
+              padding: 10px 10px 0 52px;
+              width: 97%;
+              border-radius: 10px;
+              font-family: "ClanOT-NarrowMedium";
+              font-size: 15px;
+              color: grey;
+              outline: none;
+              resize: none;
+              &::placeholder {
+                width: 95%;
+                border-radius: 10px;
+                font-family: "ClanOT-NarrowMedium";
+                font-size: 15px;
+                color: grey;
+              }
+            }
+          }
+
+          p#captcha {
+            input[type="text"] {
+              text-indent: 5px !important;
+            }
+          }
+
+          p#submitInput {
+            width: 97%;
+            text-align: right;
+            button {
+              border-radius: 10px;
+              width: 30%;
+              height: 40px;
+              background-color: #f5f5f5;
+              border: 1px solid black;
+              font-family: "ClanOT-NarrowMedium";
+              font-size: 15px;
+              color: #000;
+              outline: none;
+              cursor: pointer;
+              transition: 0.5s all ease;
+              &:hover {
+                background-color: #262b37;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    background-color: #f5f5f5;
+    border-top: 1px solid black;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    p {
+      color: grey;
+      font-family: "ClanOT-NarrowNews";
+    }
+  }
+}
