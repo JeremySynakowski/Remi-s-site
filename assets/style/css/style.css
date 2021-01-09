@@ -1,5 +1,29 @@
 @media screen and (max-width: 768px) {
-    
+    body {
+        margin:0;
+    }
+    header h1 {
+        width:auto;
+        text-align: center;
+    }
+
+    header nav {
+        background-color: #FFF;
+        opacity: 90%;
+    }
+
+    header nav ul {
+        list-style: none;
+    }
+
+    header nav ul li {
+        padding-bottom:30px;
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+        color: #3C3C3C;
+    }
 } 
 
 @media screen and (max-width: 1024px) {
